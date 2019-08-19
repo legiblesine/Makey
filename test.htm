@@ -54,6 +54,7 @@ var ten = "000";
 var eleven = "11";
 var twelve = "12";
 var thirteen = "13";
+document.getElementById('macro').loop = true;
 document.addEventListener("contextmenu", function(event) {
 event.preventDefault(); 
 if(!document.getElementById('macro').paused){
@@ -69,19 +70,11 @@ if(mute == false){
 console.log(n);
     document.getElementById('6-0').play();
 	if (n.indexOf("1432") > 1) {
+	document.getElementById('macro').play();
 	console.log("YAYAY");
 	n = "000";
 	mute = true;
 	console.log(mute);
-	while(true){
-	document.getElementById('macro').play();
-	document.addEventListener('keydown', function(e) {
-  if (e.keyCode == 83) {
-  break;
-  }
-  }
-  
-		}
 	}
 	    if (document.getElementById('6-0').paused && mute == false) {
         document.getElementById('6-0').play();
