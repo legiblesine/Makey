@@ -34,7 +34,15 @@
 </audio><audio id="6-12" controls style="display:none" preload="auto" >
   <source src="acoustic/acousticguitar-6string-12-e.wav" type="audio/wav"> Your browser does not support the audio element.
 </audio><audio id="macro" controls style="display:none" preload="auto" >
-  <source src="acoustic/macro2.wav" type="audio/wav"> Your browser does not support the audio element.
+  <source src="acoustic/pls.mp3" type="audio/mp3"> Your browser does not support the audio element.
+</audio><audio id="friend" controls style="display:none" preload="auto" >
+  <source src="acoustic/friend.mp3" type="audio/mp3"> Your browser does not support the audio element.
+</audio><audio id="silence" controls style="display:none" preload="auto" >
+  <source src="acoustic/silence.mp3" type="audio/mp3"> Your browser does not support the audio element.
+</audio><audio id="caroline" controls style="display:none" preload="auto" >
+  <source src="acoustic/caroline.mp3" type="audio/mp3"> Your browser does not support the audio element.
+</audio><audio id="letitbe" controls style="display:none" preload="auto" >
+  <source src="acoustic/letitbe.mp3" type="audio/mp3"> Your browser does not support the audio element.
 </audio>
 
 <script>
@@ -46,17 +54,22 @@ var two = "2";
 var three = "3";
 var four = "4";
 var five = "5";
-var six = "000";
-var seven = "000";
-var eight = "000";
-var nine = "000";
-var ten = "000";
+var six = "6";
+var seven = "7";
+var eight = "8";
+var nine = "9";
+var ten = "10";
 var eleven = "11";
 var twelve = "12";
 var thirteen = "13";
 document.getElementById('macro').loop = true;
+document.getElementById('friend').loop = true;
+document.getElementById('silence').loop = true;
+document.getElementById('letitbe').loop = true;
+document.getElementById('caroline').loop = true;
 document.addEventListener("contextmenu", function(event) {
 event.preventDefault(); 
+console.log(n);
 if(!document.getElementById('macro').paused){
 document.getElementById('macro').pause();
 document.getElementById('macro').currentTime = 0;
@@ -66,6 +79,47 @@ mute=false;
    if(document.getElementById('macro').ended){
    mute = false;
    }
+   
+   if(!document.getElementById('letitbe').paused){
+document.getElementById('letitbe').pause();
+document.getElementById('letitbe').currentTime = 0;
+mute=false;
+
+}
+   if(document.getElementById('letitbe').ended){
+   mute = false;
+   }
+   
+   if(!document.getElementById('friend').paused){
+document.getElementById('friend').pause();
+document.getElementById('friend').currentTime = 0;
+mute=false;
+
+}
+   if(document.getElementById('friend').ended){
+   mute = false;
+   }
+   
+   if(!document.getElementById('silence').paused){
+document.getElementById('silence').pause();
+document.getElementById('silence').currentTime = 0;
+mute=false;
+
+}
+   if(document.getElementById('silence').ended){
+   mute = false;
+   }
+   
+   if(!document.getElementById('caroline').paused){
+document.getElementById('caroline').pause();
+document.getElementById('caroline').currentTime = 0;
+mute=false;
+
+}
+   if(document.getElementById('caroline').ended){
+   mute = false;
+   }
+   
 if(mute == false){
 console.log(n);
     document.getElementById('6-0').play();
@@ -76,6 +130,41 @@ console.log(n);
 	mute = true;
 	console.log(mute);
 	}
+	
+		if (n.indexOf("1234") > 1) {
+	document.getElementById('silence').play();
+	console.log("YAYAY");
+	n = "000";
+	mute = true;
+	console.log(mute);
+	}
+	
+		if (n.indexOf("4321") > 1) {
+	document.getElementById('friend').play();
+	console.log("YAYAY");
+	n = "000";
+	mute = true;
+	console.log(mute);
+	}
+	
+			if (n.indexOf("6543") > 1) {
+	document.getElementById('caroline').play();
+	console.log("YAYAY");
+	n = "000";
+	mute = true;
+	console.log(mute);
+	}
+	
+			if (n.indexOf("7654") > 1) {
+	document.getElementById('letitbe').play();
+	console.log("YAYAY");
+	n = "000";
+	mute = true;
+	console.log(mute);
+	}
+	
+	
+	
 	    if (document.getElementById('6-0').paused && mute == false) {
         document.getElementById('6-0').play();
 		}else{
@@ -131,7 +220,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 65) {
-   REZ = n.concat(five);
+    n = n.concat(five);
     document.getElementById('6-5').play();
 	    if (document.getElementById('6-5').paused) {
         document.getElementById('6-5').play();
@@ -142,6 +231,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 87) {
+   n = n.concat(six);
     document.getElementById('6-6').play();
 	    if (document.getElementById('6-6').paused) {
         document.getElementById('6-6').play();
@@ -152,6 +242,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 40) {
+   n = n.concat(seven);
     document.getElementById('6-7').play();
 	    if (document.getElementById('6-7').paused) {
         document.getElementById('6-7').play();
@@ -162,6 +253,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 32) {
+   n = n.concat(eight);
     document.getElementById('6-8').play();
 	    if (document.getElementById('6-8').paused) {
         document.getElementById('6-8').play();
@@ -172,6 +264,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 39) {
+   n = n.concat(nine);
     document.getElementById('6-9').play();
 	    if (document.getElementById('6-9').paused) {
         document.getElementById('6-9').play();
@@ -181,7 +274,8 @@ if(mute == false){
    }}}});
 document.addEventListener('keydown', function(e) {
 if(mute == false){
-  if (e.keyCode == 38) {  
+  if (e.keyCode == 38) { 
+ n = n.concat(ten);  
     document.getElementById('6-10').play();
 	     if (document.getElementById('6-10').paused) {    
         document.getElementById('6-10').play();
@@ -192,6 +286,7 @@ if(mute == false){
 document.addEventListener('keydown', function(e) {
 if(mute == false){
   if (e.keyCode == 37) {
+   n = n.concat(eleven);
     document.getElementById('6-11').play();
 	    if (document.getElementById('6-11').paused) {
         document.getElementById('6-11').play();
@@ -203,6 +298,7 @@ if(mute == false){
 document.addEventListener("click", function(event) {
 if(mute == false){
 event.preventDefault();
+ n = n.concat(twelve);
     document.getElementById('6-12').play();
 	    if (document.getElementById('6-12').paused) {
         document.getElementById('6-12').play();
